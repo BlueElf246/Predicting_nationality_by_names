@@ -1,9 +1,9 @@
 # Predicting_nationality_by_names
-*This is the project of predicting nationality by names.
-*In this project I use the Faker library to build a small binary lstm model to clean the data from names-dataset(link:https://github.com/philipperemy/name-dataset)
-*The reason why I choose this dataset instead of by creating fake name to train large lstm model is this 3.5GB data will capture the wide variety of names of a countries, which provide more valuable information than using fake names.
-*The downside of this large dataset is it has a lot of noise, since the data taken from 530M facebook users. The user may not name their name as their actual name.
-*From that problem, I have create a binary lstm model to clean the raw_dataset.
+* This is the project of predicting nationality by names.
+* In this project I use the Faker library to build a small binary lstm model to clean the data from names-dataset(link:https://github.com/philipperemy/name-dataset)
+* The reason why I choose this dataset instead of by creating fake name to train large lstm model is this 3.5GB data will capture the wide variety of names of a countries, which provide more valuable information than using fake names.
+* The downside of this large dataset is it has a lot of noise, since the data taken from 530M facebook users. The user may not name their name as their actual name.
+* From that problem, I have create a binary lstm model to clean the raw_dataset.
 
 The workflow:
 
@@ -40,7 +40,7 @@ train_loader, valid_loader = create_model().train_test_loader(batch_size=batch_s
 
 train = train_model(batch_size=batch_size, model_name=src, epoch=8, layer=2).lstm_train_test_process(train_loader, valid_loader)
 
-*Finaly run the file run_filter.py to filter raw_dataset
+* Finaly run the file run_filter.py to filter raw_dataset
 
 f.Filter(name[11], "English"),the first the path to raw_dataset the second argument is model saved file name use want to use for example, English.pt.
 
@@ -49,12 +49,12 @@ f.Filter(name[11], "English"),the first the path to raw_dataset the second argum
 list_name = glob.glob("/Users/datle/Desktop/mybiggestprj/true_*")
 change it to "/cleaned_dataset/true_*.csv"
 
-*In this file, I bring all the model architecture and training function separately instead of using the same archtecture as small lstm.
+* In this file, I bring all the model architecture and training function separately instead of using the same archtecture as small lstm.
 
 The input size will be (number of example, length of char in a batch, 54), where 54 is the vector size encoded from a character.
 For more in detail, read my report.
 
-*Reference: https://pytorch.org/tutorials/intermediate/char_rnn_classification_tutorial.html
+* Reference: https://pytorch.org/tutorials/intermediate/char_rnn_classification_tutorial.html
 
 Thanks for reading <3
 
