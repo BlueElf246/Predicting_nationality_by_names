@@ -40,21 +40,23 @@ train_loader, valid_loader = create_model().train_test_loader(batch_size=batch_s
 
 train = train_model(batch_size=batch_size, model_name=src, epoch=8, layer=2).lstm_train_test_process(train_loader, valid_loader)
 
-Finaly run the file run_filter.py to filter raw_dataset
+*Finaly run the file run_filter.py to filter raw_dataset
 
 f.Filter(name[11], "English"),the first the path to raw_dataset the second argument is model saved file name use want to use for example, English.pt.
 
-In train_multi_lstm.py, we will combine all true_*.csv dataset into a large and train it.
+*In train_multi_lstm.py, we will combine all true_*.csv dataset into a large and train it.
 
 list_name = glob.glob("/Users/datle/Desktop/mybiggestprj/true_*")
 change it to "/cleaned_dataset/true_*.csv"
 
-In this file, I bring all the model architecture and training function separately instead of using the same archtecture as small lstm.
+*In this file, I bring all the model architecture and training function separately instead of using the same archtecture as small lstm.
 
 The input size will be (number of example, length of char in a batch, 54), where 54 is the vector size encoded from a character.
 For more in detail, read my report.
 
-Reference: https://pytorch.org/tutorials/intermediate/char_rnn_classification_tutorial.html
+*Reference: https://pytorch.org/tutorials/intermediate/char_rnn_classification_tutorial.html
+
+Thanks for reading <3
 
 
 
